@@ -7,37 +7,24 @@ import numpy.distutils.misc_util
 include_dirs = numpy.distutils.misc_util.get_numpy_include_dirs()
 include_dirs.insert(0, distutils.sysconfig.get_python_inc())
 
-# Get the text for the readme and license
-with open('README.rst') as f:
-    readme = f.read()
-
-with open('LICENSE') as f:
-    license = f.read()
-
-setup(name='pymix',
-      version="0.8b",
-      
-      description='PyMix -- Python mixture package',
-      long_description=readme, 
-      
-      author="Benjamin Georgi",
-      author_email="georgi@molgen.mpg.de",
+setup(name='SIPSim_pymix',
+      version="0.1.0",
+      description='Python mixture package dependency for SIPSim',
+      long_description="See the README",      
+      author="Nick Youngblut",
+      author_email="nyoungb2@gmail.com",
       url ="http://www.pymix.org",
-      license=license,
-      
-      packages = ['pymix', 'pymix.examples', 'pymix.tests'],
-      
+      license='GNU General Public License v2.0',
+      packages = ['SIPSim_pymix', 'SIPSim_pymix.examples', 'SIPSim_pymix.tests'],
       ext_modules = [Extension('_C_mixextend',
-                               ['pymix/C_mixextend.c'],
+                               ['SIPSim_pymix/C_mixextend.c'],
                                include_dirs = include_dirs,
                                libraries = ['gsl', 'gslcblas' ,'m'],
                                )
                      ],
-
       requires = [
           'numpy',
       ]
-
      )
 
 # EOF: setup.py
