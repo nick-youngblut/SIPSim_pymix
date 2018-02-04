@@ -13,7 +13,7 @@ setup(name='SIPSim_pymix',
       long_description="See the README",      
       author="Nick Youngblut",
       author_email="nyoungb2@gmail.com",
-      url ="http://www.pymix.org",
+      url ="https://github.com/nick-youngblut/SIPSim_pymix",
       license='GNU General Public License v2.0',
       packages = ['SIPSim_pymix', 'SIPSim_pymix.examples', 'SIPSim_pymix.tests'],
       ext_modules = [Extension('_C_mixextend',
@@ -26,5 +26,3 @@ setup(name='SIPSim_pymix',
           'numpy',
       ]
      )
-
-# EOF: setup.py
