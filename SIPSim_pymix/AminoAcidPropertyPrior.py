@@ -167,7 +167,7 @@ def readUCSCPrior(filename):
             s = m3.groups(1)[0]
             alpha = s.split(' ')
             alpha = map(float,alpha)
-            as =  alpha.pop(0) # first entry is the sum of the others -> remove
+            tmp =  alpha.pop(0) # first entry is the sum of the others -> remove
             alpha_mat.append(alpha)
 
     # intergrate gap character '-' into the alphabet

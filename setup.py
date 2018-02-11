@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 import distutils.sysconfig
 import numpy.distutils.misc_util
+from setuptools import setup, find_packages
 
 # Get the arrayobject.h(numpy) and python.h(python) header file paths:
 include_dirs = numpy.distutils.misc_util.get_numpy_include_dirs()
@@ -15,7 +16,8 @@ setup(name='SIPSim_pymix',
       author_email="nyoungb2@gmail.com",
       url ="https://github.com/nick-youngblut/SIPSim_pymix",
       license='GNU General Public License v2.0',
-      packages = ['SIPSim_pymix', 'SIPSim_pymix.examples', 'SIPSim_pymix.tests'],
+      packages = find_packages(),
+      package_dir = {'SIPSim_pymix' : 'SIPSim_pymix'},
       ext_modules = [Extension('_C_mixextend',
                                ['SIPSim_pymix/C_mixextend.c'],
                                include_dirs = include_dirs,
