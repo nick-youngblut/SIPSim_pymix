@@ -8,13 +8,13 @@ before_install:
   - chmod +x miniconda.sh							 
   - ./miniconda.sh -b
   - export PATH=$HOME/miniconda3/bin:$PATH
-  - conda update --yes -n base conda
+  - conda update --yes conda
   - conda config --add channels defaults
   - conda config --add channels conda-forge
   - conda config --add channels bioconda
 
 install:
-  - conda install gsl
+  - conda install --yes gsl
   - pip install .
 
 script:
