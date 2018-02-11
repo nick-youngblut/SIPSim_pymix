@@ -2,18 +2,28 @@
 from distutils.core import setup, Extension
 import distutils.sysconfig
 import numpy.distutils.misc_util
+from distutils.spawn import find_executable
 import os
 
 # Get the arrayobject.h(numpy) and python.h(python) header file paths:
 include_dirs = numpy.distutils.misc_util.get_numpy_include_dirs()
 include_dirs.insert(0, distutils.sysconfig.get_python_inc())
 ## including conda include/ dir if found
+### check for conda environment
 try:
     conda_include = os.path.join(os.environ['CONDA_PREFIX'], 'include')
     include_dirs.insert(0, conda_include)
 except KeyError:
-    pass
-
+    conda_include = None
+### trying conda base path
+if conda_include is None:
+    conda_path = find_executable('conda')
+    if conda_path is not '':
+        p = os.path.split(conda_path)[0]
+        p = os.path.split(p)[0]
+        p = os.path.join(p, 'include')
+        include_dirs.insert(0, p)
+        
 # c module that requires gsl
 module1 = Extension('_C_mixextend',
                     ['SIPSim_pymix/C_mixextend.c'],
