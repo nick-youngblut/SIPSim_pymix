@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from setuptools import setup, Extension
-#from distutils.core import setup, Extension
+#from setuptools import setup, Extension
+from distutils.core import setup, Extension
 import distutils.sysconfig
 import numpy.distutils.misc_util
 from distutils.spawn import find_executable
