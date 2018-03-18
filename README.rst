@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/nick-youngblut/SIPSim_pymix.svg?branch=master
+	       :target: https://travis-ci.org/nick-youngblut/SIPSim_pymix
+
 SIPSim_pymix
 ============
 

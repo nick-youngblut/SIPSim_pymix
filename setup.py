@@ -33,7 +33,7 @@ module1 = Extension('_C_mixextend',
 
 # setup
 setup(name='SIPSim_pymix',
-      version="0.1.1",
+      version="0.1.2",
       description='Python mixture package dependency for SIPSim',
       long_description="See the README",      
       author="Nick Youngblut",
